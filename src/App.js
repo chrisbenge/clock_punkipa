@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import styles from './App.module.scss';
 
+import Header from './components/Header/Header';
 import ProductGrid from './components/ProductGrid/ProductGrid';
 import SortDropdown from './components/SortDropdown/SortDropdown';
 import TextSearch from './components/TextSearch/TextSearch';
@@ -34,7 +35,7 @@ function App() {
     if ( order === 'abv-asc' ) {
       sortAsecending( 'abv', reordedData );
     } else {
-      sortAsecending( 'abv', reordedData ).reverse();
+      sortDesending( 'abv', reordedData );
     }
 
     setBeers(reordedData);
@@ -42,6 +43,8 @@ function App() {
   }
 
   const sortAsecending = ( key , data ) => data.sort( (a, b ) => (a[key] < b[key] ? 1 : -1));
+  
+  const sortDesending = ( key , data ) => data.sort( (a, b ) => (a[key] > b[key] ? 1 : -1));
 
   const keywordSearch = event => {
 
@@ -57,12 +60,15 @@ function App() {
   }, []);
 
   return (
-    
-    <main className={ styles.appWrapper }>
-      <TextSearch handleSubmisson={keywordSearch} handleChange={setKeyword} />
-      <SortDropdown handleChange={sortData} />
-      <ProductGrid products={beers} />
-    </main>
+    <>
+      <Header />
+      <main className={ styles.appWrapper }>
+        
+        <TextSearch handleSubmisson={keywordSearch} handleChange={setKeyword} />
+        <SortDropdown handleChange={sortData} />
+        <ProductGrid products={beers} />
+      </main>
+    </>
   );
 }
 

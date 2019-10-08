@@ -1,0 +1,32 @@
+@import "../../styles/functions.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.header {
+  background: rgba($primary, 0.8) url("./background.jpg") no-repeat center
+    center;
+  background-size: cover;
+  text-align: center;
+  padding: rem(80px) rem($gutter);
+  margin-bottom: rem($gutter);
+  background-blend-mode: multiply;
+
+  &__title {
+    font-size: rem(60px);
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 0;
+    color: $white;
+
+    @include respond-to("small-desktop") {
+      font-size: rem(80px);
+    }
+
+    span {
+      background: $primary;
+      display: inline;
+      padding: rem(12px) rem(30px);
+      box-decoration-break: clone;
+    }
+  }
+}
