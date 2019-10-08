@@ -6,10 +6,6 @@
 @import "./styles/fonts.scss";
 @import "./styles/typography.scss";
 
-body {
-  background: $grey-light;
-}
-
 .appWrapper {
   max-width: $site-width;
   margin: 0 auto;

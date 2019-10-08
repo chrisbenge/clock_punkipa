@@ -1,4 +1,62 @@
+@import "../../styles/functions.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
 .productCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include respond-to("small-tablet") {
+    flex-direction: row;
+  }
+
+  &__name {
+    font-size: rem(50px);
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: rem(20px);
+    color: $white;
+
+    span {
+      background: $black;
+      display: inline;
+      padding: rem(8px);
+      box-decoration-break: clone;
+    }
+  }
+
   &__image {
+    max-height: rem(370px);
+    margin-bottom: rem($gutter / 2);
+
+    @include respond-to("small-tablet") {
+      margin-right: rem($gutter / 2);
+    }
+  }
+
+  &__tagline {
+    color: $primary;
+  }
+
+  &__tags {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row wrap;
+  }
+
+  &__tag {
+    background: $primary;
+    color: $white;
+    text-transform: uppercase;
+    padding: rem(8px);
+    box-decoration-break: clone;
+    font-weight: 400;
+
+    & + & {
+      margin-left: rem($gutter / 4);
+    }
   }
 }

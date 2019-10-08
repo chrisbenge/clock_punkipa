@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import styles from './App.scss';
+import styles from './App.module.scss';
 
 import ProductGrid from './components/ProductGrid/ProductGrid';
 import SortDropdown from './components/SortDropdown/SortDropdown';
@@ -58,11 +58,11 @@ function App() {
 
   return (
     
-    <div className={ styles.appWrapper }>
+    <main className={ styles.appWrapper }>
       <TextSearch handleSubmisson={keywordSearch} handleChange={setKeyword} />
       <SortDropdown handleChange={sortData} />
       <ProductGrid products={beers} />
-    </div>
+    </main>
   );
 }
 
