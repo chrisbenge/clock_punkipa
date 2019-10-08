@@ -1,0 +1,22 @@
+$site-width: 1440px;
+$gutter: 80px;
+$base-line-height: 1.5;
+$base-font-size: 16px;
+
+$white: hsl(0, 0%, 100%);
+$grey-light: hsl(0, 0%, 98%);
+$grey-dark: hsl(0, 0%, 52%);
+$blue-vvdark: hsl(207, 26%, 17%);
+$blue-vvdark2: hsl(200, 15%, 8%);
+$blue-dark: hsl(209, 23%, 22%);
+
+//* Breakpoints */
+$breakpoints: (
+  "medium-handset": 360px,
+  "large-handset": 400px,
+  "small-tablet": 600px,
+  "large-tablet": 720px,
+  "small-desktop": 960px,
+  "medium-desktop": 1024px,
+  "large-desktop": 1200px
+);

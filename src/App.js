@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
+import styles from './App.scss';
+
 import ProductGrid from './components/ProductGrid/ProductGrid';
 
 
@@ -20,9 +23,9 @@ function App() {
 
 
   return (
-    <>
+    <div className={ styles.appWrapper }>
       <ProductGrid products={beers} />
-    </>
+    </div>
   );
 }
 

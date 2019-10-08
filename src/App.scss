@@ -1,0 +1,21 @@
+@import "./styles/functions.scss";
+@import "./styles/mixins.scss";
+@import "./styles/variables.scss";
+@import "./styles/normalize.scss";
+@import "./styles/scaffolding.scss";
+@import "./styles/fonts.scss";
+@import "./styles/typography.scss";
+
+body {
+  background: $grey-light;
+}
+
+.appWrapper {
+  max-width: $site-width;
+  margin: 0 auto;
+  padding: 0 rem($gutter / 4);
+
+  @include respond-to("small-desktop") {
+    padding: 0 rem($gutter);
+  }
+}

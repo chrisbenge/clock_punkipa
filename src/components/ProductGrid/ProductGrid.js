@@ -1,10 +1,11 @@
 import React from 'react';
 
+import styles from './ProductGrid.module.scss';
+
 import ProductCard from '../ProductCard/ProductCard';
 
 const ProductGrid = ( { products } ) => (
-    <div>
-      <h1>Beers</h1>
+    <div className={styles.productGrid}>
       {products.map( product => <ProductCard key={product.id} product={product} /> )}
     </div>
   );
