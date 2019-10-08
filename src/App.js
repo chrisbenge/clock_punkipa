@@ -1,35 +1,28 @@
 import React, { useState, useEffect } from 'react';
+import ProductGrid from './components/ProductGrid/ProductGrid';
+
 
 function App() {
 
-  const API_ENDPOINT = 'https://api.punkapi.com/v2/beers'
-
-  const getData = async () => {
-    const data = await fetch( API_ENDPOINT ).then( res => res.json() );
-  }
-
+  const API_ENDPOINT = 'https://api.punkapi.com/v2/beers';
+  const [ beers, setBeers ] = useState();
+  
 
   useEffect( () => {
-    getData();
+
+    const getInitialData = async () => {
+      const data = await fetch( API_ENDPOINT ).then( res => res.json() );
+      setBeers(data);
+    }
+    
+    getInitialData();
   }, []);
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ProductGrid products={beers} />
+    </>
   );
 }
 
