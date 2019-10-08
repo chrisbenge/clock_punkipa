@@ -13,10 +13,18 @@ function App() {
   const [ beers, setBeers ] = useState([]);
   const [ keyword, setKeyword ] = useState('');
 
- async function getData( endpoint ) {
-   const response = await fetch( endpoint );
-   const json = await response.json();
-   setBeers(json);
+ async function getData( endpoint = API_ENDPOINT) {
+   try {
+
+    const response = await fetch( endpoint );
+    const json = await response.json();
+    setBeers(json);
+
+   } catch(err) {
+
+     throw new Error(err);
+
+   }  
  }
 
   const sortData = event  => {
@@ -33,19 +41,23 @@ function App() {
 
   }
 
-  const sortAsecending = ( key, data ) => data.sort( (a, b ) => (a[key] < b[key] ? 1 : -1));
+  const sortAsecending = ( key , data ) => data.sort( (a, b ) => (a[key] < b[key] ? 1 : -1));
 
   const keywordSearch = event => {
+
     const searchString = keyword.replace( / /g, '_');
-    getData( `${API_ENDPOINT}?beer_name=${searchString}` );
+    const url = (searchString === '' ? API_ENDPOINT : `${API_ENDPOINT}?beer_name=${searchString}`);
+
+    getData( url );
     event.preventDefault();
   }
 
   useEffect( () => {
-    getData( API_ENDPOINT );
+    getData();
   }, []);
 
   return (
+    
     <div className={ styles.appWrapper }>
       <TextSearch handleSubmisson={keywordSearch} handleChange={setKeyword} />
       <SortDropdown handleChange={sortData} />
