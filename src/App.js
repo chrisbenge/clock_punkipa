@@ -9,7 +9,7 @@ import TextSearch from './components/TextSearch/TextSearch';
 
 function App() {
 
-  const API_ENDPOINT = 'https://api.punkapi.com/v2/beers';
+  const API_ENDPOINT = 'https://api.punkapi.com/v2/beers?per_page=80';
   const [ beers, setBeers ] = useState([]);
   const [ keyword, setKeyword ] = useState('');
 
@@ -46,7 +46,7 @@ function App() {
   const keywordSearch = event => {
 
     const searchString = keyword.replace( / /g, '_');
-    const url = (searchString === '' ? API_ENDPOINT : `${API_ENDPOINT}?beer_name=${searchString}`);
+    const url = (searchString === '' ? API_ENDPOINT : `${API_ENDPOINT}&beer_name=${searchString}`);
 
     getData( url );
     event.preventDefault();
