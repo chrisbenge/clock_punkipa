@@ -5,7 +5,7 @@ import ProductGrid from './components/ProductGrid/ProductGrid';
 function App() {
 
   const API_ENDPOINT = 'https://api.punkapi.com/v2/beers';
-  const [ beers, setBeers ] = useState();
+  const [ beers, setBeers ] = useState([]);
   
 
   useEffect( () => {
