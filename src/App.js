@@ -1,6 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
+
+  const API_ENDPOINT = 'https://api.punkapi.com/v2/beers'
+
+  const getData = async () => {
+    const data = await fetch( API_ENDPOINT ).then( res => res.json() );
+  }
+
+
+  useEffect( () => {
+    getData();
+  }, []);
+
+
   return (
     <div className="App">
       <header className="App-header">
