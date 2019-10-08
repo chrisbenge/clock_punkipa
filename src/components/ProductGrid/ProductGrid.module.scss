@@ -6,4 +6,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(rem(380px), 1fr));
   gap: rem($gutter);
+
+  &__error {
+    text-align: center;
+    padding: rem($gutter) 0;
+  }
 }

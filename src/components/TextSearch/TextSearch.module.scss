@@ -1,0 +1,17 @@
+@import "../../styles/functions.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.textSearch {
+  padding: 0 rem($gutter * 2);
+  margin-bottom: rem($gutter);
+
+  &__text {
+    width: 100%;
+    border: 1px solid $primary;
+    appearance: none;
+    border-radius: 0;
+    padding: rem(15px);
+    font-size: rem(18px);
+  }
+}
