@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './ProductCard.module.scss';
 
@@ -20,6 +21,17 @@ const ProductCard = ( { product } ) => {
     </div>
   );
 }
+
+ProductCard.propTypes =  {
+  product: PropTypes.shape({
+    image_url: PropTypes.string.isRequired, 
+    name: PropTypes.string.isRequired, 
+    tagline: PropTypes.string.isRequired, 
+    description: PropTypes.string.isRequired, 
+    abv: PropTypes.number.isRequired, 
+    first_brewed: PropTypes.string.isRequired
+  })
+};
 
 
 export default ProductCard;

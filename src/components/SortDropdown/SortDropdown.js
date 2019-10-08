@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SortDropdown = ( { handleChange } ) => (
   <select onChange={ handleChange }>
@@ -6,6 +7,10 @@ const SortDropdown = ( { handleChange } ) => (
     <option value="abv-asc">ABV Ascending</option>
   </select>
 );
+
+SortDropdown.propTypes =  {
+  handleChange: PropTypes.func.isRequired
+};
 
 export default SortDropdown;
 
