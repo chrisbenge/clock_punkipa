@@ -6,7 +6,7 @@ import styles from './TextSearch.module.scss';
 const TextSearch = ( {handleSubmisson, handleChange} ) => (
   <form onSubmit={ handleSubmisson } className={styles.textSearch}>
     <input type='text' placeholder='Search by name' onChange={e => handleChange(e.target.value)} className={styles.textSearch__text}/>
-    <input type='submit' value='Submit'/>
+    <input type='submit' value='Submit' className={styles.textSearch__submit}/>
   </form>
 );
 

@@ -3,15 +3,37 @@
 @import "../../styles/variables.scss";
 
 .textSearch {
-  padding: 0 rem($gutter * 2);
   margin-bottom: rem($gutter);
+  display: flex;
+  flex-flow: row nowrap;
+
+  @include respond-to("small-desktop") {
+    padding: 0 rem($gutter * 2);
+  }
 
   &__text {
     width: 100%;
-    border: 1px solid $primary;
+    border: rem(2px) solid $grey;
+    border-right-width: 0;
     appearance: none;
     border-radius: 0;
     padding: rem(15px);
     font-size: rem(18px);
+
+    &:focus {
+      border-color: $primary;
+    }
+  }
+
+  &__submit {
+    border: rem(2px) solid $grey;
+    border-left-width: 0;
+    background: url("./search.svg") no-repeat;
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    width: rem(54px);
+    background-size: 70%;
+    background-position: center center;
   }
 }

@@ -42,9 +42,9 @@ function App() {
 
   }
 
-  const sortAsecending = ( key , data ) => data.sort( (a, b ) => (a[key] < b[key] ? 1 : -1));
+  const sortAsecending = ( key , data ) => data.sort( (a, b ) => (a[key] > b[key] ? 1 : -1));
   
-  const sortDesending = ( key , data ) => data.sort( (a, b ) => (a[key] > b[key] ? 1 : -1));
+  const sortDesending = ( key , data ) => data.sort( (a, b ) => (a[key] < b[key] ? 1 : -1));
 
   const keywordSearch = event => {
 
