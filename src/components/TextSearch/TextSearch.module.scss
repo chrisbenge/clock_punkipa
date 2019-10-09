@@ -5,7 +5,13 @@
 .textSearch {
   display: flex;
   flex-flow: row nowrap;
-  width: 50%;
+  width: 100%;
+  margin-bottom: rem($gutter / 2);
+
+  @include respond-to("small-desktop") {
+    width: 50%;
+    margin-bottom: 0;
+  }
 
   &__text {
     width: 100%;

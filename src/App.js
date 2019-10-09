@@ -32,10 +32,18 @@ function App() {
     const order = event.target.value;
     let reordedData = [...beers];
 
-    if ( order === 'abv-asc' ) {
-      sortAsecending( 'abv', reordedData );
-    } else {
-      sortDesending( 'abv', reordedData );
+    switch( order ) {
+      case 'id-desc':
+          sortAsecending( 'id', reordedData );
+        break;
+      case 'abv-asc':
+        sortAsecending( 'abv', reordedData );
+        break;
+      case 'abv-desc':
+        sortDesending( 'abv', reordedData );
+        break;
+      default:
+        sortDesending( 'id', reordedData );
     }
 
     setBeers(reordedData);

@@ -30,6 +30,7 @@
   &__image {
     max-height: rem(370px);
     margin-bottom: rem($gutter / 2);
+    flex-shrink: 0;
 
     @include respond-to("small-tablet") {
       margin-right: rem($gutter / 2);

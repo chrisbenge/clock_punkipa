@@ -5,8 +5,9 @@ import styles from './SortDropdown.module.scss';
 
 const SortDropdown = ( { handleChange } ) => (
   <div className={styles.sortDropdown}>
-    <p>Order your results:</p>
-    <select onChange={ handleChange }>
+    <label>Sort: </label>
+    <select onChange={ handleChange }  className={styles.sortDropdown__select}>
+      <option value="id-desc">ID</option>
       <option value="abv-desc">ABV Descending</option>
       <option value="abv-asc">ABV Ascending</option>
     </select>

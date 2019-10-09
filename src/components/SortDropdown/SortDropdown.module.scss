@@ -1,6 +1,14 @@
+@import "../../styles/functions.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
 .sortDropdown {
   display: flex;
   flex-flow: row nowrap;
-  align-items: flex-start;
-  align-content: flex-start;
+  align-items: center;
+  align-content: center;
+
+  &__select {
+    margin-left: rem(10px);
+  }
 }
