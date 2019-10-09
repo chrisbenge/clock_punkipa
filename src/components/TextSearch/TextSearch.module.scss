@@ -3,13 +3,9 @@
 @import "../../styles/variables.scss";
 
 .textSearch {
-  margin-bottom: rem($gutter);
   display: flex;
   flex-flow: row nowrap;
-
-  @include respond-to("small-desktop") {
-    padding: 0 rem($gutter * 2);
-  }
+  width: 50%;
 
   &__text {
     width: 100%;

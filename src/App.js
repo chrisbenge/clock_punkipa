@@ -63,9 +63,11 @@ function App() {
     <>
       <Header />
       <main className={ styles.appWrapper }>
+        <div className={ styles.appSearchBar }>
+          <TextSearch handleSubmisson={keywordSearch} handleChange={setKeyword} />
+          <SortDropdown handleChange={sortData} />
+        </div>
         
-        <TextSearch handleSubmisson={keywordSearch} handleChange={setKeyword} />
-        <SortDropdown handleChange={sortData} />
         <ProductGrid products={beers} />
       </main>
     </>
