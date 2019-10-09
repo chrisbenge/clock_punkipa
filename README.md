@@ -2,6 +2,8 @@ This reposity was created for the Clock coding test, as part of the interview pr
 
 It's based on a brief supplied and has taken 4.5hrs to complete.
 
+This has been tested on the latest versions of Firefox and Chrome
+
 ## Additional Features
 
 - Pagination - Currently the results are set at 80 oper page, but there are more than 80 results according the API. Pagination would allow the user search more results
